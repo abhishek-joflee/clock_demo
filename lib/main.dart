@@ -29,7 +29,14 @@ class MyHomePage extends StatelessWidget {
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
         body: Center(
-          child: MyStopwatch(),
+          child: Padding(
+            padding: EdgeInsets.all(32.0),
+            // aspectRatio is width / height (put 1 if you want square)
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: MyStopwatch(),
+            ),
+          ),
         ),
       ),
     );
