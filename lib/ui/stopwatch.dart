@@ -12,7 +12,7 @@ class MyStopwatch extends StatefulWidget {
 class _MyStopwatchState extends State<MyStopwatch>
     with SingleTickerProviderStateMixin {
   // DATETIME STATE VARIABLE
-  late Ticker _ticker;
+  late final Ticker _ticker;
   Duration _elapsed = Duration.zero;
 
   @override
