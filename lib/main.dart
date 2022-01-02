@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'ui/stopwatch.dart';
 
@@ -13,9 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: Colors.black),
       home: const MyHomePage(),
     );
   }
@@ -26,9 +25,12 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: MyStopwatch(),
+    return const AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle.light,
+      child: Scaffold(
+        body: Center(
+          child: MyStopwatch(),
+        ),
       ),
     );
   }
